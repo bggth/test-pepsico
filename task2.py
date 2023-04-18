@@ -33,8 +33,7 @@ def task_21():
 
 	con.commit()
 
-	result = cur.execute('''SELECT table1.EntityID, table1.value FROM table1 
- 			WHERE NOT EXISTS (SELECT EntityID FROM table2 WHERE EntityID=table1.EntityID)''')
+	result = cur.execute('''SELECT * FROM table1 WHERE EntityID NOT IN (SELECT DISTINCT EntityID FROM table2)''')
 	
 	for x in result.fetchall():
 		print(x)
@@ -74,12 +73,12 @@ def task_22_23():
 		print(x)
 
 	print('\ntask 2.2 result')
-	result = cur.execute('SELECT CatalogID, SUM(PositionQuantity * PositionPrice) FROM table1 WHERE RequestID = 111 GROUP BY CatalogID')
+	result = cur.execute('SELECT CatalogID, SUM(PositionQuantity * PositionPrice) FROM table1 WHERE (RequestID = 111) GROUP BY CatalogID')
 	for x in result.fetchall():
 		print(x)
 
 	print('\ntask 2.3 result')
-	result = cur.execute('SELECT CatalogID, SUM(PositionQuantity * PositionPrice) as sum FROM table1 WHERE RequestID = 111 GROUP BY CatalogID HAVING (sum > 100000)')
+	result = cur.execute('SELECT CatalogID, SUM(PositionQuantity * PositionPrice) as sum FROM table1 WHERE (RequestID = 111) GROUP BY CatalogID HAVING (sum > 100000)')
 	for x in result.fetchall():
 		print(x)
 
