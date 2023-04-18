@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pepsico-test</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="userinput">test</div>
+        <button class="userinput">test</button>
+        <input type="text" class="userinput"/>
+
+        <div id="Block0">
+            <button class="userinput">Block0</button>
+        </div>
+
+        <div id="Block1">
+            <button class="userinput">Block1</button>
+            
+        </div>
+
+        <div id="Block2">
+            <button class="userinput">Block2</button>
+            
+        </div>
+
+        <div id="Block1">
+            <button class="userinput">Block1</button>
+            
+        </div>
+
+
+
+    </div>
+</body>
+
+<script>
+    $(document).ready(function() {
+
+        $( ".container" ).css("display", "flex");
+        $( ".container" ).css("flex-direction", "column");
+        $( ".container" ).css("gap", "20px");
+
+
+        // task 1.1
+        $(".userinput").on("click", function() {
+            console.log(this);
+        })
+
+
+        // task 1.2
+
+
+
+
+});
+</script>
+
+</html>
