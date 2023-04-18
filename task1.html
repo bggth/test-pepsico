@@ -16,23 +16,15 @@
         <div id="Block0">
             <button class="userinput">Block0</button>
         </div>
-
         <div id="Block1">
-            <button class="userinput">Block1</button>
-            
+            <button class="userinput">Block1</button>           
         </div>
-
         <div id="Block2">
-            <button class="userinput">Block2</button>
-            
+            <button class="userinput">Block2</button>          
         </div>
-
         <div id="Block1">
             <button class="userinput">Block1</button>
-            
         </div>
-
-
 
     </div>
 </body>
@@ -47,12 +39,13 @@
 
         // task 1.1
         $(".userinput").on("click", function() {
-            console.log(this);
+            //console.log(this);
         })
 
 
         // task 1.2
-
+        const result = $("#Block1 .userinput");
+        console.log(result);
 
 
 
